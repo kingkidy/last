@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <link rel="stylesheet" href="styles/about.css">
+
+    <style>
+        .card {
+            opacity: 0;
+        }
+
+    
+    </style>
+
+
+    <title>PHOTOBOOK</title>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container">
+            <a href="/posting" class="navbar-brand">PhotoBook</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/posting">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">Explore</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/dashboard" class="nav-link">Dashboard</a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container">
+
+            @if (Route::has('login'))
+            <!-- @auth
+                        <li class="nav-item">
+                            <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
+                        </li>
+                        @endauth-->
+
+
+            <li class="nav-item">
+                <a href="{{ route('login') }}" class=" text-decoration-none">Log in</a>
+            </li>
+            @else
+
+            @endif
+
+            @if (Route::has('register'))
+            <li class="nav-item">
+
+                <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+            </li>
+            @endif
+
+        </div>
+    </nav>
+
+
+
+    <section class="p-5">
+
+        <div class="container">
+
+            <div class="row text-center ">
+                <div class="col-4 mb-3">
+                    <div class="card bg-dark text-white">
+
+                        <img class="img-fluid  d-sm-block  " src="images\kingkidyy.jpg" alt="">
+
+                        <h3 class="card-title m-2">Beka Pro</h3>
+                        <p class="card-text m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni tempora laborum,
+                            similique iure laudantium sed delectus soluta harum placeat odit veritatis sit ipsum, aut quae saepe eius pariatur quibusdam ab.</p>
+                    </div>
+                </div>
+                <div class="col-4 mb-3">
+                    <div class="card bg-dark text-white">
+                        <img class=" img-fluid   d-sm-block" src="images\20221207_012750.jpg" alt="">
+                        <h3 class="card-title m-2">Ziliyo Photographer</h3>
+                        <p class="card-text m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni tempora laborum,
+                            similique iure laudantium sed delectus soluta harum placeat odit veritatis sit ipsum, aut quae saepe eius pariatur quibusdam ab.</p>
+                    </div>
+                </div>
+                <div class="col-4 mb-3">
+                    <div class="card bg-dark text-white">
+                        <img class=" img-fluid  d-sm-block" src="images\miss-zhang-jz0xIgcwyL0-unsplash.jpg" alt="">
+                        <h3 class="card-title m-2">Vertex Visuals</h3>
+                        <p class="card-text m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni tempora laborum,
+                            similique iure laudantium sed delectus soluta harum placeat odit veritatis sit ipsum, aut quae saepe eius pariatur quibusdam ab.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!---->
+
+    <section>
+        <div class="row text-center">
+            <h2>Sample Packages</h2>
+        </div>
+
+        <div class="modal fade" id="fillform" tabindex="-1" aria-labelledby="fillformLabel" aria-hidden="true">
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="fillformLabel">fill in the form</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="lead">fill out the booking form</p>
+                        <form action="/drop.php" method="POST">
+
+                            <div class="mb-3">
+                                <label for="firstname" class="form-col-label" id="myform">
+                                    First Name
+                                </label>
+                                <input type="text" class="form-control" id="firstname" name="firstname">
+                            </div>
+                            <div class="mb-3">
+                                <label for="lastname" class="form-col-label">
+                                    Last Name
+                                </label>
+                                <input type="text" class="form-control" id="lastname" name="lastname">
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-col-label">
+                                    Phone
+                                </label>
+                                <input type="text" class="form-control" id="phone" name="phone">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-col-label">
+                                    Email
+                                </label>
+                                <input type="text" class="form-control" id="email" name="email">
+                            </div>
+                            <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <div class="form">
+  <form method="POST" action="/form.php">
+    <p>
+    <label for="firstname">First Name </label>
+    <input type="text" name="firstname" id="firstname">
+    </p>
+    <p>
+    <label for="lastname">Last Name </label>
+    <input type="text" name="lastname" id="lastname">
+    </p>
+    <p>
+      <label for="phone">phone</label>
+      <input type="text" name="phone" id="phone">
+      </p>
+    <p>
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email">
+    </p>
+    <p>
+    <input type="submit" name="submit" id="submit" value="Submit">
+    </p>
+  </form>
+</div> -->
+
+
+
+
+
+
+    <section id="booking" class="p-5">
+        <div class="container p-5">
+            <div class="row text-center ">
+                <div class="col-sm ">
+                    <div class="card text-white my-4 ">
+
+                        <h1 class="card-title">Package1</h1>
+
+                        <h2>100,000 tshs</h2>
+                        <p>6 hrs coverage<br>
+                            120 photos<br>
+                            10 quality retouched photos<br>
+                            2 wooden frame photos</p>
+
+                    </div>
+                    <div class="card  text-white my-4">
+                        <h1 class="card-title">Package2</h1>
+
+                        <h2>100,000 tshs</h2>
+                        <p>6 hrs coverage<br>
+                            120 photos<br>
+                            10 quality retouched photos<br>
+                            2 wooden frame photos</p>
+
+                    </div>
+
+                    <div class="card  text-white my-4">
+                        <h1 class="card-title">Package3</h1>
+
+                        <h2>100,000 tshs</h2>
+                        <p>6 hrs coverage<br>
+                            120 photos<br>
+                            10 quality retouched photos<br>
+                            2 wooden frame photos</p>
+
+                    </div>
+                    <div class="card  text-white my-4">
+                        <h1 class="card-title">Package4</h1>
+
+                        <h2>100,000 tshs</h2>
+                        <p>6 hrs coverage<br>
+                            120 photos<br>
+                            10 quality retouched photos<br>
+                            2 wooden frame photos</p>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="bg-dark text-light p-5 text-center ">
+        <div class="container">
+            <div class="d-sm-flex align-items-center justify-content-between">
+                <div>
+                    <h1>Feel free to make <span class=" text-warning">Bookings</span></h1>
+                    <p class="lead my-4 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eos modi eveniet error veniam obcaecati, culpa totam,
+                        perferendis deserunt dolor fuga laudantium ratione animi! Quis vero eveniet aliquam quasi consequuntur!</p>
+                    <button class="btn btn-primary btn-lg " data-bs-toggle="modal" data-bs-target="#fillform">
+                        fill Booking form
+                    </button>
+                </div>
+                <img class=" img-fluid w-50 d-none d-sm-block" src="images\kindpng_1390339.png" alt="">
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <script>
+        $(document).ready(function() {
+            $("#myForm").submit(function(event) {
+                event.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: "submit-form.php",
+                    data: $("#myForm").serialize(),
+                    success: function(response) {
+                        alert(response);
+                        $("#exampleModal").modal("hide");
+                    },
+                    error: function() {
+                        alert("Error submitting form!");
+                    }
+                });
+            });
+        });
+    </script>
+
+
+    <script>
+        $(document).ready(function() {
+            // Fade-in animation for cards on page load
+            $(".card").each(function(index) {
+                $(this).delay(1000 * index).animate({
+                    opacity: 1
+                }, 800);
+            });
+
+            // Click event for filling booking form
+            $("#fillform").on("show.bs.modal", function() {
+                $(this).find(".modal-dialog").addClass("animate__animated animate__bounceIn");
+            });
+
+            // Scroll event for the "Feel free to make Bookings" section
+            $(window).scroll(function() {
+                var scrollPosition = $(this).scrollTop();
+                var triggerOffset = $("#booking").offset().top - $(window).height();
+
+                if (scrollPosition > triggerOffset) {
+                    $(".btn-primary").addClass("animate__animated animate__pulse");
+                } else {
+                    $(".btn-primary").removeClass("animate__animated animate__pulse");
+                }
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var cards = document.querySelectorAll(".card");
+            var delay = 200; // Delay between each card animation
+
+            // Loop through each card and apply fade-in animation
+            cards.forEach(function(card, index) {
+                setTimeout(function() {
+                    card.style.opacity = 1;
+                }, delay * index);
+            });
+        });
+    </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
