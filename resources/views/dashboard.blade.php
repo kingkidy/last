@@ -83,7 +83,7 @@
               <td>{{ $item->phone }}</td>
 
 
-              <td>{{ $item->email }}</td>
+              <td>{{ $item->email }}</td> 
 
             </tr>
             @endforeach
